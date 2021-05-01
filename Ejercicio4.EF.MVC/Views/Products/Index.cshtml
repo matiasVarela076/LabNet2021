@@ -1,0 +1,30 @@
+﻿@model List<Ejercicio4.EF.MVC.Models.ProductsView>
+@{
+    ViewBag.Title = "Lista de territorios";
+}
+<h1>Lista de Productos</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th>Acción</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var producto in Model)
+        {
+            <tr>
+                <th scope="row">@producto.ID</th>
+                <td>@producto.nombreProdu</td>
+                <td>@producto.precio</td>
+                <td>@Html.ActionLink("Borrar", "Delete", new { id = producto.ID }, new { onclick = "return confirm('Esta seguro que desea borrar?')" }) </td>
+                
+            </tr>
+        }
+    </tbody>
+</table>
+<div>@Html.ActionLink("Insertar nuevo Producto", "Insert")</div>

@@ -1,0 +1,21 @@
+﻿
+@model Ejercicio4.EF.MVC.Models.TerritoriesView
+
+@{
+    ViewBag.Title = "Insert";
+}
+
+<h1>Ingresa un nuevo Territorio</h1>
+<br />
+@using (Html.BeginForm("Insert", "Territories", FormMethod.Post))
+{
+    <label>ID: </label>@Html.TextBoxFor(r => r.Id)
+    <label>Descripción: </label>@Html.TextBoxFor(r => r.Descripcion)
+    <input type="submit" class="btn btn-success" value="Guardar" />
+
+    <h1>Agregar o modifica Territorio</h1>
+
+   
+
+
+}

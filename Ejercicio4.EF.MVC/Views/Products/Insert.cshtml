@@ -1,0 +1,19 @@
+﻿
+@model Ejercicio4.EF.MVC.Models.ProductsView
+
+@{
+    ViewBag.Title = "Insert";
+}
+
+<h1>Ingresa un nuevo Producto</h1>
+<br />
+@using (Html.BeginForm("Insert", "Products", FormMethod.Post))
+
+{
+   
+    <label>Descripción: </label>@Html.TextBoxFor(r => r.nombreProdu)
+    <label>Precio: </label>@Html.TextBoxFor(r => r.precio)
+    <input type="submit" class="btn btn-success" value="Guardar" />
+}
+
+
