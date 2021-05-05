@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  type="text/css" href="/css/style.css">
+    <script src="js/app.js"></script>
+    
+    <title>Formulario</title>
+    <style type="text/css">
+    
+    .edad{
+    height: 200;
+   
+    border-radius: 300 px;     
+    width: 100px;
+  }
+      
+      form{
+        background-color: burlywood;
+        border-radius: 300 px;
+        height: 400;
+        
+        padding-right: 500 px;
+        margin: auto
+   }  
+  
+    </style>
+</head>
+<body>
+    <h1>Contacto</h1>
+    <p>Completa tus datos</p>
+
+    <form  id="formulario"  onsubmit="return validateForm()" action="acceso.html" method= "GET">
+    <p>Informacion personal:</p>
+    
+    <div></div>
+    <p>Nombre: <br><input type="text" id="fNombre"></p>
+    <p>Apellido: <br><input type="text" id="fApellido"></p>
+    <div>
+    <p>Edad: <br><input type="text" name="edad" class="edad"></p></div>
+    
+    <div>
+    <input type="radio" id="masculino" name="Masculino" value="masculino">
+    <label for="Masculino">Masculino</label><br>
+  	<input type="radio" id="female"  value="female">
+  	<label for="femenino">Femenino</label><br>
+  	<input type="radio" id="otro"  value="otro">
+  	<label for="other">Otro</label>     
+    
+</form>
+
+  <p>Información Personal</p>
+  <p>Empresa: <br><input type="text"></p>
+   <div></div>
+    <div></div>
+    <button type="submit">Submit</button>
+    
+    <input type="button" onclick="limpiarFormulario()" value="Limpiar formulario">
+    
+</div>
+</body>
+</html>
