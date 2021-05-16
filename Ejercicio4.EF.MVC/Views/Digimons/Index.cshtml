@@ -1,0 +1,28 @@
+﻿@model List<Ejercicio4.EF.MVC.Models.AnimeView>
+@{
+    ViewBag.Title = "Digimones";
+}
+<h1>Lista de Digimons</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>        
+            <th>Nivel</th>
+            
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var digimons in Model)
+        {
+            <tr>
+                <th scope="row">@digimons.Nombre</th>
+                <td>@digimons.Nivel</td>
+                
+
+            </tr>
+        }
+    </tbody>
+</table>
+

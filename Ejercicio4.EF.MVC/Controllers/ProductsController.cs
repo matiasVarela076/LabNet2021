@@ -11,16 +11,16 @@ namespace Ejercicio4.EF.MVC.Controllers
 {
     public class ProductsController : Controller
     {
-        ProductosLogica logic = new ProductosLogica();
-        // GET: Territories
+        ProductosLogica logica = new ProductosLogica();
+        // GET: Products
         public ActionResult Index()
         {
-            List<Products> producto = logic.GetAll(); //Traemos la entidad territories
+            List<Products> producto = logica.GetAll(); //Traemos la entidad territories
             List<ProductsView> productsViews = producto.Select(t => new ProductsView
             {
                 ID = t.ProductID,//traigo de la entidad lo que necesito y lo asigno a el view de territorio
-                nombreProdu = t.ProductName,
-                precio = t.UnitPrice
+                NombreProdu = t.ProductName,
+                Precio = t.UnitPrice
 
             }).ToList();
 
@@ -31,32 +31,57 @@ namespace Ejercicio4.EF.MVC.Controllers
             return View();
         }
 
-            [HttpPost]
+        [HttpPost]
         public ActionResult Insert(ProductsView produView)
         {
             try
             {
-                Products ProductsEntity = new Products
+
+                if (produView.ID.Equals(null))
                 {
-                      //a la entidad le seteo los parametros del view
-                    ProductName = produView.nombreProdu,
-                    UnitPrice = produView.precio
-                };
+               
+                    {
+                        Products ProductsEntity = new Products
+                        {
 
-                logic.Add(ProductsEntity);  //Lo agrego
+                            //a la entidad le seteo los parametros del view
+                            ProductName = produView.NombreProdu,
+                            UnitPrice = produView.Precio
+                        };
 
-                return RedirectToAction("Index", "Products"); // vuelve al index para mostrar el nuevo campo
+                        logica.Add(ProductsEntity);  //Lo agrego
+
+                        return RedirectToAction("Index", "Products"); // vuelve al index para mostrar el nuevo campo
+                    }
+                }
+                else
+                {
+                    Products ProductsEntity = new Products
+                    {
+                        ProductID = produView.ID,
+                        ProductName = produView.NombreProdu,
+                        UnitPrice = produView.Precio
+                    };
+
+                    logica.Update(ProductsEntity);
+
+                    return RedirectToAction("Index", "Products");
+                }
+
             }
+
             catch (Exception)
             {
 
                 return RedirectToAction("Index", "Error");
             }
+           
         }
+    
      
         public ActionResult Delete(int id)
         {
-            logic.Delete(id); //Borramos el ID
+            logica.Delete(id); //Borramos el ID
 
             return RedirectToAction("Index"); //Una ves terminado vuelva a la pagina principal
         }
