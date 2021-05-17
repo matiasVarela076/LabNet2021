@@ -1,0 +1,28 @@
+﻿
+
+@model List<Ejercicio4.EF.MVC.Models.TerritoriesView>
+@{
+    ViewBag.Title = "Lista de territorios";
+}
+<h1>Lista de territorios</h1>
+ <br> 
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Descripción</th>
+            <th>Acción</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var territorio in Model)
+        {
+            <tr>
+                <th scope="row">@territorio.Id</th>
+                <td>@territorio.Descripcion</td>
+                <td>@Html.ActionLink("Borrar","Delete",new{id= territorio.Id},new { onclick= "return confirm('Esta seguro que desea borrar?')" }) </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div>@Html.ActionLink("Insertar nuevo Territorio", "Insert")</div>
