@@ -1,10 +1,10 @@
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using Ejercicio4.EF.WebApi.Areas.HelpPage.ModelDescriptions;
-using Ejercicio4.EF.WebApi.Areas.HelpPage.Models;
+using Ejercicio4.EF.WebAPI.Areas.HelpPage.ModelDescriptions;
+using Ejercicio4.EF.WebAPI.Areas.HelpPage.Models;
 
-namespace Ejercicio4.EF.WebApi.Areas.HelpPage.Controllers
+namespace Ejercicio4.EF.WebAPI.Areas.HelpPage.Controllers
 {
     /// <summary>
     /// The controller that will handle requests for the help page.

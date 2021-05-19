@@ -1,118 +1,95 @@
-﻿using System;
+﻿
+using Ejercicio4.EF.Entities;
+using Ejercicio4.EF.Logic;
+using Ejercicio4.EF.MVC.Models;
+using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
+using System.Web;
 using System.Web.Http;
-using System.Web.Http.Description;
+using System.Web.Mvc;
 
-
-namespace Ejercicio4.EF.WebApi.Controllers
+namespace Ejercicio4.EF.WebAPI.Controllers
 {
- /*   public class ProductsController : ApiController
+ 
+    public class ProductsController : Controller
     {
-        ProductosLogica logica = new ProductosLogica();
-
-        // GET: api/Products
-        public IQueryable<Products> GetProducts()
+        ProductosLogica logic = new ProductosLogica();
+        // GET: Products
+        public ActionResult Index()
         {
-            return db.Products;
+            return View();
+        }
+         
+        // GET: api/Products
+        public List<ProductsView> GetProducts()
+        {
+      
+            List<Products> productos = logic.GetAll();
+
+            List<ProductsView> listaProductos = productos.Select(p => new ProductsView
+            {
+                ID = p.ProductID,
+                NombreProdu = p.ProductName,
+                Precio = p.UnitPrice
+
+            }).ToList();
+
+            return listaProductos;
         }
 
         // GET: api/Products/5
-        [ResponseType(typeof(Products))]
-        public IHttpActionResult GetProducts(int id)
-        {
-            Products products = db.Products.Find(id);
-            if (products == null)
-            {
-                return NotFound();
-            }
 
-            return Ok(products);
+        public void GetProducts(int id)
+        {
+            Products products = logic.BuscarProdu(id);
+            var view = new ProductsView();
+
+            view.ID = products.ProductID;
+            view.NombreProdu = products.ProductName;
+            view.Precio = products.UnitPrice;
+            
         }
 
         // PUT: api/Products/5
-        [ResponseType(typeof(void))]
-        public IHttpActionResult PutProducts(int id, Products products)
+
+        public void PutProducts(Products productsView)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
 
-            if (id != products.ProductID)
+            Products ProductsEntity = new Products
             {
-                return BadRequest();
-            }
+                ProductID = productsView.ProductID,
+                ProductName = productsView.ProductName,
+                UnitPrice = productsView.UnitPrice
+            };
 
-            db.Entry(products).State = EntityState.Modified;
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ProductsExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return StatusCode(HttpStatusCode.NoContent);
+            logic.Update(ProductsEntity);
+   
         }
 
         // POST: api/Products
-        [ResponseType(typeof(Products))]
-        public IHttpActionResult PostProducts(Products products)
+
+        public void PostProducts(ProductsView productsView)
         {
-            if (!ModelState.IsValid)
+           
+            Products productsEntity = new Products
             {
-                return BadRequest(ModelState);
-            }
+                CategoryID = productsView.ID,
+                ProductName = productsView.NombreProdu,
+                UnitPrice = productsView.Precio
 
-            db.Products.Add(products);
-            db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = products.ProductID }, products);
+            };
+            logic.Add(productsEntity);
+
+            
         }
 
         // DELETE: api/Products/5
-        [ResponseType(typeof(Products))]
-        public IHttpActionResult DeleteProducts(int id)
+        public void DeleteProducts(int id)
         {
-            Products products = db.Products.Find(id);
-            if (products == null)
-            {
-                return NotFound();
-            }
 
-            db.Products.Remove(products);
-            db.SaveChanges();
-
-            return Ok(products);
+            logic.Delete(id);
         }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-
-        private bool ProductsExists(int id)
-        {
-            return db.Products.Count(e => e.ProductID == id) > 0;
-        }
-    }*/
+    }
 }

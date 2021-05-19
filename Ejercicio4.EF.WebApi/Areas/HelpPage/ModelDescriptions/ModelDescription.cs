@@ -1,6 +1,6 @@
 using System;
 
-namespace Ejercicio4.EF.WebApi.Areas.HelpPage.ModelDescriptions
+namespace Ejercicio4.EF.WebAPI.Areas.HelpPage.ModelDescriptions
 {
     /// <summary>
     /// Describes a type model.

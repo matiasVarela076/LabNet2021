@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace Ejercicio4.EF.WebApi
+namespace Ejercicio4.EF.WebAPI
 {
     public class FilterConfig
     {

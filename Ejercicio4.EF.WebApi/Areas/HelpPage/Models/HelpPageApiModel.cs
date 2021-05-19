@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Net.Http.Headers;
 using System.Web.Http.Description;
-using Ejercicio4.EF.WebApi.Areas.HelpPage.ModelDescriptions;
+using Ejercicio4.EF.WebAPI.Areas.HelpPage.ModelDescriptions;
 
-namespace Ejercicio4.EF.WebApi.Areas.HelpPage.Models
+namespace Ejercicio4.EF.WebAPI.Areas.HelpPage.Models
 {
     /// <summary>
     /// The model that represents an API displayed on the help page.

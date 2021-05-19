@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Ejercicio4.EF.WebApi.Controllers
+namespace Ejercicio4.EF.WebAPI.Controllers
 {
     public class HomeController : Controller
     {

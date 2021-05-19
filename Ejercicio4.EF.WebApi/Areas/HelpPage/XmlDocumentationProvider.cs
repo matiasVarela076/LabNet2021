@@ -5,9 +5,9 @@ using System.Reflection;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
 using System.Xml.XPath;
-using Ejercicio4.EF.WebApi.Areas.HelpPage.ModelDescriptions;
+using Ejercicio4.EF.WebAPI.Areas.HelpPage.ModelDescriptions;
 
-namespace Ejercicio4.EF.WebApi.Areas.HelpPage
+namespace Ejercicio4.EF.WebAPI.Areas.HelpPage
 {
     /// <summary>
     /// A custom <see cref="IDocumentationProvider"/> that reads the API documentation from an XML documentation file.

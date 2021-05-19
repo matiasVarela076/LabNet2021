@@ -29,7 +29,12 @@ namespace Ejercicio4.EF.Logic
         {
             return context.Products.ToList(); //Metodo que retorna toda la tabla Productos
         }
+        public Products BuscarProdu(int id)
+        {
+            var buscarProdu = context.Products.Find(id);
 
+            return buscarProdu;
+        }
         public void Update(Products producto)
         {
             var productoAModificar = context.Products.Find(producto.ProductID);

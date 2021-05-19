@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace Ejercicio4.EF.WebApi
+namespace Ejercicio4.EF.WebAPI
 {
     public class BundleConfig
     {

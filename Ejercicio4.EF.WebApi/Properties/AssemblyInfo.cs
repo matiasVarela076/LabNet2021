@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Ejercicio4.EF.WebApi")]
+[assembly: AssemblyTitle("Ejercicio4.EF.WebAPI")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Ejercicio4.EF.WebApi")]
+[assembly: AssemblyProduct("Ejercicio4.EF.WebAPI")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("83953d92-8382-4f5f-b1fd-d229ddab41bf")]
+[assembly: Guid("817a2279-c963-4092-bf60-147603e1c23f")]
 
 // Version information for an assembly consists of the following four values:
 //

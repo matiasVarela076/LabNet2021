@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace Ejercicio4.EF.WebApi.Controllers
+namespace Ejercicio4.EF.WebAPI.Controllers
 {
     public class ValuesController : ApiController
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 
-namespace Ejercicio4.EF.WebApi
+namespace Ejercicio4.EF.WebAPI
 {
     public static class WebApiConfig
     {

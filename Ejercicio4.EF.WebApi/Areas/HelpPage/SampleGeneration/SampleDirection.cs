@@ -1,4 +1,4 @@
-namespace Ejercicio4.EF.WebApi.Areas.HelpPage
+namespace Ejercicio4.EF.WebAPI.Areas.HelpPage
 {
     /// <summary>
     /// Indicates whether the sample is used for request or response

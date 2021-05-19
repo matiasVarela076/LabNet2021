@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace Ejercicio4.EF.WebApi
+namespace Ejercicio4.EF.WebAPI
 {
     public class RouteConfig
     {

@@ -28,7 +28,7 @@ namespace Ejercicio4.EF.MVC.Controllers
         }
         public ActionResult Insert()
         {
-            return View();
+            return View(); 
         }
 
         [HttpPost]
